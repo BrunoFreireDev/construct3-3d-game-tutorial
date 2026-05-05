@@ -1,0 +1,43 @@
+{
+	"name": "7 - Ambience Sound",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ambience sound",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 402000015945534
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Áudio",
+							"sid": 274979806012455,
+							"parameters": {
+								"audio-file": {
+									"path": "trainning_room"
+								},
+								"loop": "looping",
+								"volume": "5",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 922235264231099
+				}
+			],
+			"sid": 285714871016885
+		}
+	],
+	"sid": 238324451883345
+}

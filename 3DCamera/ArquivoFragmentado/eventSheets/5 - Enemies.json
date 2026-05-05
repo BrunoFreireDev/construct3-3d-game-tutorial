@@ -1,0 +1,163 @@
+{
+	"name": "5 - Enemies",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemies",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Alien_Bob",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Bob_moves",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 540611720724838
+										}
+									],
+									"actions": [
+										{
+											"id": "move-to-object",
+											"objectClass": "alienForm",
+											"sid": 956878778281546,
+											"behaviorType": "MoverPara",
+											"parameters": {
+												"object": "Player",
+												"image-point": "0",
+												"mode": "direct"
+											}
+										}
+									],
+									"sid": 430021793205109
+								}
+							],
+							"sid": 106302559642843
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "receive damage configs",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "death animation for alien"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "3Dbullet",
+											"sid": 807028077916820,
+											"parameters": {
+												"object": "alienForm"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "alienForm",
+											"sid": 589415363530537,
+											"parameters": {
+												"instance-variable": "HitCount",
+												"value": "1"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "alienForm",
+											"sid": 632160017518133,
+											"behaviorType": "Piscar",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "1.0"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "3Dbullet",
+											"sid": 961805070563218
+										}
+									],
+									"sid": 594979736608346
+								},
+								{
+									"eventType": "comment",
+									"text": "Alien life = 5"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "alienForm",
+											"sid": 283861926881781,
+											"parameters": {
+												"instance-variable": "HitCount",
+												"comparison": 5,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 606132027998269,
+											"parameters": {
+												"object-to-create": "Forma3D",
+												"layer": "1",
+												"x": "alienForm.X",
+												"y": "alienForm.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Forma3D",
+											"sid": 366389667025437,
+											"parameters": {
+												"angle": "alienForm.Angle"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "alienForm",
+											"sid": 272781913645670
+										}
+									],
+									"sid": 989572617344809
+								}
+							],
+							"sid": 859323014578768
+						}
+					],
+					"sid": 929881584841543
+				}
+			],
+			"sid": 174758099143302
+		}
+	],
+	"sid": 270256790358339
+}

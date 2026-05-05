@@ -1,0 +1,30 @@
+{
+	"name": "1 - Association Sheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "2 - Global Variables"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "7 - Ambience Sound"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "4 - Controls"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "5 - Enemies"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "6 - Gravity"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "3 - 3D Camera"
+		}
+	],
+	"sid": 458750256928100
+}

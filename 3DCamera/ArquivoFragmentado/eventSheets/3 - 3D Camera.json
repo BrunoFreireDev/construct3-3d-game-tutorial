@@ -1,0 +1,113 @@
+{
+	"name": "3 - 3D Camera",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "3D cam",
+			"description": "Enable this group to see the game from a first-person perspective.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "3D CAMERA"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 279548903541296
+						}
+					],
+					"actions": [
+						{
+							"id": "look-parallel-to-layout",
+							"objectClass": "3DCamera",
+							"sid": 436248704371020,
+							"parameters": {
+								"cam-x": "Player.X",
+								"cam-y": "Player.Y",
+								"cam-z": "Player.Zelevation+playerHeight",
+								"look-angle": "Player.Angle"
+							}
+						}
+					],
+					"sid": 137130691243406
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 296755701853191
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "3DCamera",
+							"sid": 183958197991114,
+							"parameters": {
+								"x": "Player.X",
+								"y": "Player.Y",
+								"z": "Player.Zelevation+playerHeight",
+								"which": "camera"
+							}
+						}
+					],
+					"sid": 430546946072310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-movement",
+							"objectClass": "Mouse",
+							"sid": 952191112101067
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-camera",
+							"objectClass": "3DCamera",
+							"sid": 548869499276988,
+							"parameters": {
+								"rotate-x": "Mouse.MovementX / mouseSense",
+								"rotate-y": "Mouse.Movementy / mouseSense",
+								"min-polar-angle": "20",
+								"max-polar-angle": "160"
+							}
+						}
+					],
+					"sid": 917775587924049
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-movement",
+							"objectClass": "Mouse",
+							"sid": 531162037818444
+						}
+					],
+					"actions": [
+						{
+							"id": "request-pointer-lock",
+							"objectClass": "Mouse",
+							"sid": 350399087004776,
+							"parameters": {
+								"unadjusted-movement": false
+							}
+						}
+					],
+					"sid": 126278757464987
+				}
+			],
+			"sid": 941316690616818
+		}
+	],
+	"sid": 475403878380990
+}

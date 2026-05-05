@@ -1,0 +1,445 @@
+{
+	"name": "4 - Controls",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Controls",
+			"description": "Controls for game",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Movement",
+					"description": "Simples moves of player. (AWSD + Shift botton)",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 195157705917938,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 223481188357816,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Player",
+									"sid": 226215881044766,
+									"parameters": {
+										"angle": "3DCamera.CameraXRotation",
+										"distance": "playerSpeed*dt"
+									}
+								},
+								{
+									"id": "push-out-solid-at-angle",
+									"objectClass": "Player",
+									"sid": 103070798782447,
+									"behaviorType": "Personalizado",
+									"parameters": {
+										"angle": "3DCamera.CameraXrotation+180"
+									}
+								}
+							],
+							"sid": 552679913925883,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 331052794876875,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 763133885572011,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Player",
+									"sid": 935820058063693,
+									"parameters": {
+										"angle": "3DCamera.CameraXRotation-90",
+										"distance": "playerSpeed*dt"
+									}
+								},
+								{
+									"id": "push-out-solid-at-angle",
+									"objectClass": "Player",
+									"sid": 472158143743150,
+									"behaviorType": "Personalizado",
+									"parameters": {
+										"angle": "3DCamera.CameraXrotation+90"
+									}
+								}
+							],
+							"sid": 736911372688910,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 517376924231359,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 676675657267096,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Player",
+									"sid": 993240854569651,
+									"parameters": {
+										"angle": "3DCamera.CameraXRotation+90",
+										"distance": "playerSpeed*dt"
+									}
+								},
+								{
+									"id": "push-out-solid-at-angle",
+									"objectClass": "Player",
+									"sid": 945958951479267,
+									"behaviorType": "Personalizado",
+									"parameters": {
+										"angle": "3DCamera.CameraXrotation-90"
+									}
+								}
+							],
+							"sid": 191588097176492,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 786836790341856,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 183009346683418,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Player",
+									"sid": 905246804858927,
+									"parameters": {
+										"angle": "3DCamera.CameraXRotation",
+										"distance": "-playerSpeed*dt"
+									}
+								},
+								{
+									"id": "push-out-solid-at-angle",
+									"objectClass": "Player",
+									"sid": 284860965376876,
+									"behaviorType": "Personalizado",
+									"parameters": {
+										"angle": "3DCamera.CameraXrotation"
+									}
+								}
+							],
+							"sid": 570852369394520,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Run botton and configurations"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 533342621737593,
+									"parameters": {
+										"key": 16
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Player",
+									"sid": 608795182165410,
+									"parameters": {
+										"angle": "3DCamera.CameraXRotation",
+										"distance": "PlayerRun"
+									}
+								}
+							],
+							"sid": 779798558441257,
+							"isOrBlock": true
+						}
+					],
+					"sid": 137571111645728
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Basic jumping action",
+					"description": "config botton space",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Jump botton and configurations"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 640083775049296,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 212157187674986,
+									"parameters": {
+										"variable": "onGround"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 685069644686033,
+									"parameters": {
+										"variable": "dz",
+										"value": "jumpStrength"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "Player",
+									"sid": 215598918681495,
+									"parameters": {
+										"z": "Player.zelevation"
+									}
+								}
+							],
+							"sid": 983435263124443
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 322191438279626
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloco",
+									"sid": 721510388480475,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 484267144322891
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-z-elevation",
+									"objectClass": "Bloco",
+									"sid": 710224029974257,
+									"parameters": {
+										"which": "z-elevation",
+										"comparison": 4,
+										"z-elevation": "Player.Zelevation-Self.zheight+1"
+									}
+								},
+								{
+									"id": "compare-z-elevation",
+									"objectClass": "Bloco",
+									"sid": 821074609210221,
+									"parameters": {
+										"which": "z-elevation",
+										"comparison": 2,
+										"z-elevation": "Player.zelevation+playerHeight"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloco",
+									"sid": 683986255714624,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 480818593916911
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 207004909871721
+						}
+					],
+					"sid": 694457571389425
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Fire",
+					"description": "Config of fire mouse button",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Fire botton and configurations"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 175515445018192,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 913144044142729,
+									"parameters": {
+										"object": "3Dbullet",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "3Dbullet",
+									"sid": 592181500760419,
+									"parameters": {
+										"angle": "3DCamera.CameraXrotation"
+									}
+								},
+								{
+									"id": "rotate-clockwise",
+									"objectClass": "3Dbullet",
+									"sid": 756428939183500,
+									"parameters": {
+										"degrees": "random(-1, 1)"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Áudio",
+									"sid": 928214661581063,
+									"parameters": {
+										"audio-file": {
+											"path": "Blaster_simples"
+										},
+										"loop": "not-looping",
+										"volume": "3",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 555288429433967
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 836113694957641,
+									"parameters": {
+										"interval-seconds": "0.01"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-z-elevation",
+									"objectClass": "3Dbullet",
+									"sid": 476632073075785,
+									"parameters": {
+										"z": "Self.zelevation + cos(3DCamera.camerayrotation) * 3DCamera.lookz + 0.1"
+									}
+								}
+							],
+							"sid": 381025000820649
+						}
+					],
+					"sid": 141877208673506
+				}
+			],
+			"sid": 615438135851416
+		}
+	],
+	"sid": 450318565221499
+}

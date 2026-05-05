@@ -1,0 +1,144 @@
+{
+	"name": "6 - Gravity",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gravity",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Gravity configurations"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 710253361964791
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 697929231175693,
+							"parameters": {
+								"variable": "dz",
+								"value": "Gravity*dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Player",
+							"sid": 233828770349110,
+							"parameters": {
+								"z": "Player.zelevation + dz"
+							}
+						}
+					],
+					"sid": 720901934783767
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 560908586357732,
+							"parameters": {
+								"first-value": "dz",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player",
+							"sid": 695779655807158,
+							"parameters": {
+								"object": "Bloco"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "Bloco",
+							"sid": 893735447335350,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "Player.zelevation+playerHeight-self.zheight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "Bloco",
+							"sid": 930507387751310,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "Player.Z-Self.zHeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 253092647362647,
+							"parameters": {
+								"variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Player",
+							"sid": 450006030680146,
+							"parameters": {
+								"z": "Bloco.Zelevation+Bloco.zheight"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 303336456338317,
+							"parameters": {
+								"variable": "onGround",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 403877851159061
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 214275559213844
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 399021758931124,
+							"parameters": {
+								"variable": "onGround",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 260100784549535
+				}
+			],
+			"sid": 512765048495116
+		}
+	],
+	"sid": 990575993087157
+}

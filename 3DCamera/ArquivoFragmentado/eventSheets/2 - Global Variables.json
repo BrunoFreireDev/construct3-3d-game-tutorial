@@ -1,0 +1,186 @@
+{
+	"name": "2 - Global Variables",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Player configurations:"
+		},
+		{
+			"eventType": "comment",
+			"text": "The height of player, simple / A altura do jogador"
+		},
+		{
+			"eventType": "variable",
+			"name": "playerHeight",
+			"type": "number",
+			"initialValue": "45",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 321175236785752
+		},
+		{
+			"eventType": "comment",
+			"text": "Velocity of player walk / Velocidade do caminhar"
+		},
+		{
+			"eventType": "variable",
+			"name": "playerSpeed",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 365248326053834
+		},
+		{
+			"eventType": "comment",
+			"text": "Velocity of player running (PlayerSpeed*PlayerRun) / Velocidade de corrida"
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerRun",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 370883823210182
+		},
+		{
+			"eventType": "comment",
+			"text": "Camera configurations:"
+		},
+		{
+			"eventType": "variable",
+			"name": "camHeight",
+			"type": "number",
+			"initialValue": "50",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 405615127451592
+		},
+		{
+			"eventType": "variable",
+			"name": "camSensitivity",
+			"type": "number",
+			"initialValue": "15",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 821441703065524
+		},
+		{
+			"eventType": "variable",
+			"name": "camX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 609551365651145
+		},
+		{
+			"eventType": "variable",
+			"name": "camY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 980833225342632
+		},
+		{
+			"eventType": "comment",
+			"text": "Mouse sensitive / Sensibilidade do mouse"
+		},
+		{
+			"eventType": "variable",
+			"name": "mouseSense",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 198130276832921
+		},
+		{
+			"eventType": "comment",
+			"text": "Gravity configurations:"
+		},
+		{
+			"eventType": "variable",
+			"name": "dz",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 982060078760657
+		},
+		{
+			"eventType": "comment",
+			"text": "This config is a velocity of player return to ground / Define a velocidade de retorno ao chão"
+		},
+		{
+			"eventType": "variable",
+			"name": "Gravity",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 595499308318076
+		},
+		{
+			"eventType": "variable",
+			"name": "onGround",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 985569043781034
+		},
+		{
+			"eventType": "comment",
+			"text": "Force of player jump / Força de pulo do jogador"
+		},
+		{
+			"eventType": "variable",
+			"name": "jumpStrength",
+			"type": "number",
+			"initialValue": "2.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 724952337683247
+		},
+		{
+			"eventType": "variable",
+			"name": "bulletSpeed",
+			"type": "number",
+			"initialValue": "600",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 643642882851797
+		},
+		{
+			"eventType": "comment",
+			"text": "Player Life"
+		},
+		{
+			"eventType": "variable",
+			"name": "Life",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 660999958348861
+		}
+	],
+	"sid": 297184642296418
+}
